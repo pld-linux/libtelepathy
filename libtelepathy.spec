@@ -1,4 +1,5 @@
 Summary:	A GLib library to ease writing telepathy clients
+Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		libtelepathy
 Version:	0.0.51
 Release:	1
@@ -22,13 +23,20 @@ communication, including instant messaging, voice calls and video
 calls. It abstracts differences between protocols to provide a unified
 interface for applications.
 
+%description -l pl.UTF-8
+libtelepathy jest szkieletem opartym na D-Bus ujednolicającym
+komunikację w czasie rzeczywistym, włączając w to komunikatory
+oraz komunikację głosową i za pośrednictwem wideo. Zasłania
+warstwą abstrakcji różnice pomiędzy protokołami dostarczając
+jednolity interfejs dla aplikacji.
+
 %package devel
 Summary:	Header files for libtelepathy library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libtelepathy
 Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
 Requires:	dbus-glib-devel >= 0.61
 Requires:	glib2-devel >= 2.4.0
-Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libtelepathy library.
