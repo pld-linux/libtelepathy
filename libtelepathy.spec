@@ -74,6 +74,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_datadir}/telepathy/managers
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -84,6 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libtelepathy.so.*.*.*
+%dir /usr/share/telepathy
+%dir /usr/share/telepathy/managers
 
 %files devel
 %defattr(644,root,root,755)
