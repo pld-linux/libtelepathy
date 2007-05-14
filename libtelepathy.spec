@@ -86,16 +86,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libdir}/libtelepathy.so.*.*.*
-%dir /usr/share/telepathy
-%dir /usr/share/telepathy/managers
+%dir %{_datadir}/telepathy
+%dir %{_datadir}/telepathy/managers
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtelepathy.so
+%{_libdir}/libtelepathy.la
 %dir %{_includedir}/telepathy-1.0
 %dir %{_includedir}/telepathy-1.0/libtelepathy
 %{_includedir}/telepathy-1.0/libtelepathy/*.h
-%{_libdir}/libtelepathy.la
 %{_pkgconfigdir}/libtelepathy.pc
 
 %files static
