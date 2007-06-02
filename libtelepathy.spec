@@ -1,12 +1,12 @@
 Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		libtelepathy
-Version:	0.0.54
+Version:	0.0.55
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
-# Source0-md5:	42d3388ea417ccd0e0ae125d185322a8
+# Source0-md5:	2cbbbeaf97c154a7fb9b088b95deb70e
 URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
