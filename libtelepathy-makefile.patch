@@ -1,0 +1,10 @@
+--- libtelepathy-0.3.3/src/Makefile.am~	2008-02-04 16:35:51.000000000 +0100
++++ libtelepathy-0.3.3/src/Makefile.am	2009-08-25 23:21:26.179095410 +0200
+@@ -27,7 +27,6 @@
+     tp-chan-type-text-gen.h \
+     tp-chan-type-tubes-gen.h \
+     tp-conn-iface-aliasing-gen.h \
+-    tp-conn-iface-avatars-gen.h \
+     tp-conn-iface-capabilities-gen.h \
+     tp-conn-iface-contact-info-gen.h \
+     tp-conn-iface-forwarding-gen.h \
