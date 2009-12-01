@@ -12,11 +12,13 @@ URL:		http://telepathy.freedesktop.org/wiki/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
 BuildRequires:	dbus-glib-devel >= 0.61
-BuildRequires:	telepathy-glib-devel >= 0.7.3
 BuildRequires:	glib2-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
+BuildRequires:	python
+BuildRequires:	python-modules
+BuildRequires:	telepathy-glib-devel >= 0.7.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
