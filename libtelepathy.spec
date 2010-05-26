@@ -2,7 +2,7 @@ Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		libtelepathy
 Version:	0.3.3
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
@@ -79,7 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_datadir}/telepathy/{clients,managers}
 install -d $RPM_BUILD_ROOT%{_libdir}/telepathy
 
 %clean
@@ -94,9 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libtelepathy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libtelepathy.so.2
 %dir %{_libdir}/telepathy
-%dir %{_datadir}/telepathy
-%dir %{_datadir}/telepathy/clients
-%dir %{_datadir}/telepathy/managers
 
 %files devel
 %defattr(644,root,root,755)
