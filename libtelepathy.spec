@@ -2,7 +2,7 @@ Summary:	A GLib library to ease writing telepathy clients
 Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komunikacji
 Name:		libtelepathy
 Version:	0.3.3
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Source0:	http://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
