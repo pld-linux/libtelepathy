@@ -5,20 +5,25 @@ Version:	0.3.3
 Release:	5
 License:	LGPL
 Group:		Libraries
-Source0:	http://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
+Source0:	https://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
 # Source0-md5:	490ca1a0c614d4466394b72d43bf7370
 Patch0:		%{name}-makefile.patch
-URL:		http://telepathy.freedesktop.org/wiki/
+URL:		https://telepathy.freedesktop.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	dbus-glib-devel >= 0.61
-BuildRequires:	glib2-devel >= 2.4.0
+BuildRequires:	dbus-devel >= 0.93
+BuildRequires:	dbus-glib-devel >= 0.73
+BuildRequires:	glib2-devel >= 1:2.10
 BuildRequires:	libtool
 BuildRequires:	libxslt-progs
 BuildRequires:	pkgconfig
-BuildRequires:	python
-BuildRequires:	python-modules
+BuildRequires:	python >= 2.3
+BuildRequires:	python-modules >= 2.3
 BuildRequires:	telepathy-glib-devel >= 0.7.3
+Requires:	dbus-libs >= 0.93
+Requires:	dbus-glib >= 0.73
+Requires:	glib2 >= 1:2.10
+Requires:	telepathy-glib >= 0.7.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,8 +44,10 @@ Summary:	Header files for libtelepathy library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libtelepathy
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	dbus-glib-devel >= 0.61
-Requires:	glib2-devel >= 2.4.0
+Requires:	dbus-devel >= 0.93
+Requires:	dbus-glib-devel >= 0.73
+Requires:	glib2-devel >= 1:2.10
+Requires:	telepathy-glib-devel >= 0.7.3
 
 %description devel
 Header files for libtelepathy library.
@@ -79,7 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_libdir}/telepathy
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libtelepathy.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -89,18 +97,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libtelepathy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libtelepathy.so.2
-%dir %{_libdir}/telepathy
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libtelepathy.so
-%{_libdir}/libtelepathy.la
-%dir %{_includedir}/telepathy-1.0
-%dir %{_includedir}/telepathy-1.0/libtelepathy
-%{_includedir}/telepathy-1.0/libtelepathy/*.h
+%{_includedir}/telepathy-1.0/libtelepathy
 %{_pkgconfigdir}/libtelepathy.pc
 
 %files static
