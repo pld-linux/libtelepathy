@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Biblioteka oparta na GLib dla aplikacji służących do komun
 Name:		libtelepathy
 Version:	0.3.3
 Release:	5
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://telepathy.freedesktop.org/releases/libtelepathy/%{name}-%{version}.tar.gz
 # Source0-md5:	490ca1a0c614d4466394b72d43bf7370
